@@ -1,0 +1,70 @@
+/* Ensures full height and centers everything */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #FFC0CB, #FFFFFF);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Main container to hold GIF, text, and buttons */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style for the intro gif */
+#intro-gif {
+    width: 500px;
+    border-radius: 20px; 
+    
+}
+
+/* Style for text */
+.text-section {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 20px;
+    margin-bottom: 10px;
+    background: #FFC0CB;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Button styling */
+.button-section {
+    display: flex;
+    gap: 15px; 
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button hover effect */
+.yes-button {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.no-button {
+    background-color: #ccc;
+}
+
+.yes-button:hover {
+    background-color: #ff1a1a;
+}
+
+.no-button:hover {
+    background-color: #999;
+}
