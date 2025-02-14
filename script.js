@@ -11,13 +11,21 @@ const scenes = [
             gif: "https://i.pinimg.com/originals/38/20/04/38200478b91db2d19a12ecf4672391c9.gif",
             text: "Sick! I didn't think I'd get this far...",
             buttonText: "Continue...",
-            buttonTextNo: "I'm out!"
+            buttonTextNo: "I'm out!",
+            action: () => {
+                let rizzAudio = new Audio('utils/rizz-baby.mp3');
+                rizzAudio.play();
+            }
         },
         no: {
             gif: "https://media4.giphy.com/media/7SF5scGB2AFrgsXP63/giphy.gif?cid=6c09b952jfyzy2kr9dlkanmt8x4bgb64usrq41zfmxq0vp9s&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
             text: "Why would you press such a thing :c",
             buttonText: "I'll go again!",
-            buttonTextNo: "Nah"
+            buttonTextNo: "Nah",
+            action: () => {
+                let yodaAudio = new Audio('utils/yoda.mp3');
+                yodaAudio.play();
+            }
         }
     },
     // scene 2
@@ -26,7 +34,7 @@ const scenes = [
             gif: "https://i.pinimg.com/originals/bb/ce/52/bbce52e7c5117fbe92e7ad43bc6162f8.gif",
             text: "Now, you're trapped... you can't press No.",
             buttonText: "I'm just kidding..",
-            action: moveNoButton,
+            action: moveNoButton
         },
         no: {
             gif: "https://media4.giphy.com/media/Ayc5wbcZM5Xyw/giphy.gif?cid=6c09b952656e0owz3w5j3tbme18z7jukn23ahhyot2s9b81v&ep=v1_gifs_search&rid=giphy.gif&ct=g",
@@ -46,7 +54,11 @@ const scenes = [
             gif: "https://media0.giphy.com/media/98MaHVwJOmWMz4cz1K/200w.gif?cid=6c09b952eeh44cexxdtyrt5721ym8n3kq1jiuz99oeqp8c2g&ep=v1_gifs_search&rid=200w.gif&ct=g",
             text: "Are you sure? I wanted to ask you something...",
             buttonText: "Fine, what is it?",
-            buttonTextNo: "Goodbye"
+            buttonTextNo: "Goodbye",
+            action: () => {
+                let surpriseAudio = new Audio("utils/surprise-audio.mp3");
+                surpriseAudio.play();
+            }
         }
     },
     // scene 4
@@ -109,7 +121,8 @@ function nextScene(choice) {
 
         if (sceneData.action === moveNoButton) {
             noButton.addEventListener("mouseover", moveNoButton);
-            noButton.addEventListener("touchstart", moveNoButton); // possible fix to mobile touch
+            // Possible fix for touchscreen devices... not too sure
+            noButton.addEventListener("touchstart", moveNoButton); 
         } else if (sceneData.action) {
             sceneData.action();
         }
