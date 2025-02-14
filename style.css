@@ -59,6 +59,7 @@ button {
 
 .no-button {
     background-color: #ccc;
+    transition: transform 0.3s ease-in-out;
 }
 
 .yes-button:hover {
