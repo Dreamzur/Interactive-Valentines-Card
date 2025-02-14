@@ -5,6 +5,7 @@ const noButton = document.querySelector('.no-button');
 const yesButton = document.querySelector('.yes-button');
 
 const scenes = [
+    // scene 1
     {
         yes: {
             gif: "https://i.pinimg.com/originals/38/20/04/38200478b91db2d19a12ecf4672391c9.gif",
@@ -19,6 +20,7 @@ const scenes = [
             buttonTextNo: "Nah"
         }
     },
+    // scene 2
     {
         yes: {
             gif: "https://i.pinimg.com/originals/bb/ce/52/bbce52e7c5117fbe92e7ad43bc6162f8.gif",
@@ -33,6 +35,7 @@ const scenes = [
             buttonText: "On second thought..."
         }
     },
+    // scene 3
     {
         yes: {
             gif: "https://i.pinimg.com/originals/42/fb/a8/42fba891f5f950f69ab8de1b1f818884.gif",
@@ -46,6 +49,7 @@ const scenes = [
             buttonTextNo: "Goodbye"
         }
     },
+    // scene 4
     {
         yes: {
             gif: "https://gifdb.com/images/high/tom-cat-with-heart-eyes-vv9c69scptx7jiqo.gif",
@@ -59,16 +63,8 @@ const scenes = [
             gif: "https://media.tenor.com/9RCIDZjkhBsAAAAM/hamster-meme.gif",
             text: "This is goodbye",
             action: () => {
-                yesButton.style.display = "none";
-                noButton.style.display = "none";
-            }
-        }
-    },
-    {
-        no: {
-            gif: "https://media.tenor.com/9RCIDZjkhBsAAAAM/hamster-meme.gif",
-            text: "This is goodbye",
-            action: () => {
+                let goodbyeAudio = new Audio("utils/worlds-smallest-violin.mp3");
+                goodbyeAudio.play();
                 yesButton.style.display = "none";
                 noButton.style.display = "none";
             }
@@ -118,6 +114,13 @@ function nextScene(choice) {
         }
 
         currentScene++;
+    } else if (currentScene === 4 && choice === "no") {
+        gif.src ='https://media.tenor.com/9RCIDZjkhBsAAAAM/hamster-meme.gif';
+        text.textContent = "This is goodbye!";
+        yesButton.style.display = "none";
+        noButton.style.display = "none";
+        let goodbyeAudio = new Audio("utils/worlds-smallest-violin.mp3");
+        goodbyeAudio.play();
     } else {
         gif.src ='https://i.pinimg.com/originals/fe/8e/bb/fe8ebb590e8eb5b76ae59e5d56dbf7f2.gif';
         text.textContent = "I'll see you later ;)";
