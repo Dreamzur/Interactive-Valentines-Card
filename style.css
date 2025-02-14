@@ -9,8 +9,19 @@ html, body {
     justify-content: center;
     align-items: center; 
 }
+@media (max-width: 768px) {
+    #intro-gif img {
+        max-width: 90%;
+        height: auto;
+    }
+    
+    .text-section {
+        font-size: 16px;
+        text-align: center;
+        padding: 10px;
+    }
+}
 
-/* Main container to hold GIF, text, and buttons */
 .center-container {
     display: flex;
     flex-direction: column;
@@ -18,14 +29,12 @@ html, body {
     text-align: center;
 }
 
-/* Style for the intro gif */
 #intro-gif {
     width: 500px;
     border-radius: 20px; 
     
 }
 
-/* Style for text */
 .text-section {
     color: white;
     text-shadow: 1px 1px 2px black;
@@ -36,7 +45,6 @@ html, body {
     border-radius: 10px;
 }
 
-/* Button styling */
 .button-section {
     display: flex;
     gap: 15px; 
@@ -51,7 +59,6 @@ button {
     transition: 0.3s;
 }
 
-/* Button hover effect */
 .yes-button {
     background-color: #ff4d4d;
     color: white;
