@@ -109,6 +109,7 @@ function nextScene(choice) {
 
         if (sceneData.action === moveNoButton) {
             noButton.addEventListener("mouseover", moveNoButton);
+            noButton.addEventListener("touchstart", moveNoButton); // possible fix to mobile touch
         } else if (sceneData.action) {
             sceneData.action();
         }
